@@ -1,0 +1,125 @@
+disp('Enter the given data points')
+disp('Type 1000 to end the number of data point')
+
+
+
+
+for n = 1:100
+    
+    x(n) = input('Input the values for x: ');
+    if x(n) == 0
+        break;
+    end
+    y(n) = input('Input the values for y: ');
+    
+end
+x(n) = [];
+tempx= x;
+
+f = input('Input the desired estimate x: ');
+o = input('Input the order: ');
+
+close = abs(f-x);
+
+a = min(close);
+res = find(close==a);
+
+xf(1) = x(res);
+x(res) = [];
+
+if o == 2
+    close1 = abs(f-x);
+    b= min(close1);
+    res2 = find(close1==b);
+    xf(2) = x(res2);
+    x(res2) = [];
+    tf= sort(xf);
+    ind= find(tempx==tf(1));
+    ind2= find(tempx==tf(2));
+    yf(1) = y(ind);
+    yf(2) = y(ind2);
+    
+    %BOUNDARY~~~~~~~~~~
+    
+    %y(x) = yf(1)*oi(1) + yf(2) * oi(2)
+    
+    %oi(1) = ( f - tf(2) ) / ( tf(1) - tf(2));
+    %oi(2) = ( f - tf(1) ) / ( tf(2) - tf(1));
+    
+    %finaly= yf(1)*oi(1) + yf(2) * oi(2);
+    
+end
+
+if o == 3
+    close1 = abs(f-x);
+    b= min(close1);
+    res2 = find(close1==b);
+    xf(2) = x(res2);
+    x(res2) = [];
+    close2 = abs(f-x);
+    c= min(close2);
+    res3 = find(close2==c);
+    xf(3) = x(res3);
+    x(res3) = [];
+    tf= sort(xf);
+    ind= find(tempx==tf(1));
+    ind2= find(tempx==tf(2));
+    ind3= find(tempx==tf(3));
+    yf(1) = y(ind);
+    yf(2) = y(ind2);
+    yf(3) = y(ind3);
+    
+    %BOUNDARY~~~~~
+    
+    
+    %oi(1) = (( f - tf(2) ) / ( tf(1) - tf(2))) * ;
+    %oi(2) = ( f - tf(1) ) / ( tf(2) - tf(1));
+    
+    %finaly= yf(1)*oi(1) + yf(2) * oi(2);
+    
+end
+
+
+
+for i = 1:o
+     prod = 1;
+    for j = 1:o
+       
+        if j==i
+            z=1;
+        else
+           z = (f - tf(j))/ (tf(i) - tf(j));
+        end
+        prod = prod * z;
+        
+        oi(i) = prod;
+    end
+end
+
+if o==2
+    finaly= yf(1)*oi(1) + yf(2) * oi(2);
+else
+    finaly= yf(1)*oi(1) + yf(2) * oi(2) + yf(3) * oi(3);
+end
+
+finaly
+    
+
+
+
+
+
+    
+    
+    
+
+
+    
+    
+
+
+
+
+
+
+
