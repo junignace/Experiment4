@@ -39,14 +39,7 @@ if o == 2
     yf(1) = y(ind);
     yf(2) = y(ind2);
     
-    %BOUNDARY~~~~~~~~~~
-    
-    %y(x) = yf(1)*oi(1) + yf(2) * oi(2)
-    
-    %oi(1) = ( f - tf(2) ) / ( tf(1) - tf(2));
-    %oi(2) = ( f - tf(1) ) / ( tf(2) - tf(1));
-    
-    %finaly= yf(1)*oi(1) + yf(2) * oi(2);
+   
     
 end
 
@@ -69,13 +62,7 @@ if o == 3
     yf(2) = y(ind2);
     yf(3) = y(ind3);
     
-    %BOUNDARY~~~~~
-    
-    
-    %oi(1) = (( f - tf(2) ) / ( tf(1) - tf(2))) * ;
-    %oi(2) = ( f - tf(1) ) / ( tf(2) - tf(1));
-    
-    %finaly= yf(1)*oi(1) + yf(2) * oi(2);
+
     
 end
 
